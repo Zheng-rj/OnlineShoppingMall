@@ -30,7 +30,7 @@ public class ItemController implements Controller{
 		
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.addObject("items", items);
-		modelAndView.setViewName("WEB-INF/jsp/item/itemList.jsp");
+		modelAndView.setViewName("WEB-INF/jsp/List.jsp");
 		return modelAndView;
 	}
 
