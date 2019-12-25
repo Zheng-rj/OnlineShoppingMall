@@ -10,13 +10,19 @@
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
 			
-			<bean name="/queryItems.action" class="com.zrj.Controller.ItemController"></bean>
+			<bean id="itemController" class="com.zrj.Controller.ItemController"></bean>
 			
 				<!-- 处理器映射器 -->
-				<bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"></bean>
+				<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+					<property name="mappings">
+						<props>
+							<prop key="/queryItems.action">itemController</prop>
+						</props>
+					</property>
+				</bean>
 		
 				<!-- 处理器适配器 -->
-				<bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"></bean>
+				<bean class="org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter"></bean>
 				
 				<!-- 视图解析器 -->
 				<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"></bean>

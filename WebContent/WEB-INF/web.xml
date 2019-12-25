@@ -6,7 +6,7 @@
   <servlet>
   	<servlet-name>onlineShoppingMall</servlet-name>
   	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-  	<init-param> bv 
+  	<init-param>
   		<!-- 加载主配置文件 -->
   		<param-name>contextConfigLocation</param-name>
   		<param-value>classpath:spring/springmvc.xml</param-value>
